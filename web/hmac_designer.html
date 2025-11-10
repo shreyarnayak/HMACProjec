@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>NeonGlass HMAC Studio</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="card" role="application" aria-label="HMAC Studio">
+            <div class="accent-line"></div>
+            <div class="hero">
+                <div class="logo">S#S</div>
+                <div>
+                    <h1>HMAC Studio</h1>
+                    <p class="lead">Compute HMAC-SHA256 in your browser. Base64 output. Try secret keys and messages — your data stays local.</p>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="panel">
+                    <label>Secret key</label>
+                    <input id="key" type="password" placeholder="Type a secret key (UTF-8)" />
+                    <div style="height:12px"></div>
+
+                    <label>Message / Payload</label>
+                    <textarea id="message" placeholder="Type or paste your message here..."></textarea>
+
+                    <div class="actions">
+                        <button id="gen" class="btn">Generate HMAC</button>
+                        <!--<button id="genHex" class="btn" style="background:linear-gradient(90deg,#ffd 0%, #ffb 100%);">Generate Hex</button>-->
+                        <button id="clear" class="copy">Clear</button>
+                    </div>
+
+                    <!-- Verification input -->
+                    <div style="margin-top:12px">
+                        <label>Verification input (Base64 MAC)</label>
+                        <input id="verifyInput" type="text" placeholder="Paste Base64 MAC to verify" />
+                    </div>
+
+                    <!-- ✅ Verify button below input -->
+                    <div class="actions" style="margin-top:10px;">
+                        <button id="verify" class="copy">Verify (Base64)</button>
+                    </div>
+
+                </div>
+
+                <div class="panel" aria-live="polite">
+                    <label>Output (Base64)</label>
+                    <div id="out" class="output small">—</div>
+
+                    <div style="margin-top:10px">
+                        <label>Output (Hex)</label>
+                        <div id="outHex" class="output small">—</div>
+                    </div>
+
+                    <div style="margin-top:10px" class="row">
+                        <button id="copyOut" class="copy">Copy Base64</button>
+                        <button id="copyHex" class="copy">Copy Hex</button>
+                        <div style="flex:1"></div>
+                        <div id="status" class="small muted">Ready</div>
+                    </div>
+
+                    <footer>Local-only · Web Crypto API · HmacSHA-256</footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
