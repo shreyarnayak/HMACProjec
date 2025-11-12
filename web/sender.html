@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMAC Sender</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Main content -->
+    <div class="wrap">
+        <div class="card">
+            <h1>🔐 HMAC Sender</h1>
+            <p>Generate a Message Authentication Code (MAC) using HMAC-SHA256</p>
+
+            <label>Secret Key</label>
+            <input id="key" type="password" placeholder="Enter shared secret key">
+
+            <label>Message</label>
+            <textarea id="message" placeholder="Type your message here..."></textarea>
+
+            <div class="actions">
+                <button id="gen" class="btn">Generate HMAC</button>
+                <button id="clear" class="copy">Clear</button>
+            </div>
+
+            <label>Generated HMAC (Base64)</label>
+            <input id="output" readonly placeholder="Generated HMAC will appear here">
+
+            <label>Generated HMAC (Hex)</label>
+            <input id="outputHex" readonly placeholder="Generated Hex output will appear here">
+
+            <div class="actions">
+                <button id="copyBase64" class="copy">Copy Base64</button>
+                <button id="copyHex" class="copy">Copy Hex</button>
+            </div>
+
+            <footer>Local-only · Web Crypto API · HmacSHA-256</footer>
+        </div>
+    </div>
+
+    <script src="hmac.js"></script>
+</body>
+
+</html>

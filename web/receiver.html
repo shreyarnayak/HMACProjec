@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMAC Receiver</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="card">
+            <h1>📩 HMAC Receiver</h1>
+            <p>Verify message integrity and authenticity using HMAC-SHA256</p>
+
+            <label>Secret Key</label>
+            <input id="key" type="password" placeholder="Enter shared secret key">
+
+            <label>Received Message</label>
+            <textarea id="message" placeholder="Paste the received message here..."></textarea>
+
+            <label>Received HMAC (Base64)</label>
+            <input id="verifyInput" type="text" placeholder="Paste received Base64 HMAC here">
+
+            <div class="actions">
+                <button id="verify" class="btn">Verify Message</button>
+                <button id="clear" class="copy">Clear</button>
+            </div>
+
+            <div id="status" class="small muted">Waiting for input...</div>
+
+            <footer>Local-only · Web Crypto API · HmacSHA-256</footer>
+        </div>
+    </div>
+
+    <script src="hmac.js"></script>
+</body>
+
+</html>
